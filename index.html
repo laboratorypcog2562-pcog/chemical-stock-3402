@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบตรวจสอบคลังสารเคมีเรียลไทม์ | คณะเภสัชศาสตร์ ห้อง 610-03</title>
+    <title>ระบบตรวจสอบคลังสารเคมีเรียลไทม์ | คณะเภสัชศาสตร์ ห้องปฏิบัติการ 3402</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght=300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,7 +18,7 @@
                 <img src="https://pcog.psu.ac.th/images/banners/logo1.jpg" alt="Faculty Logo" class="h-14 w-auto object-contain bg-white p-1.5 rounded-xl shadow-xs">
                 <div>
                     <h1 class="text-xl font-bold tracking-wide">Chemical Inventory Viewer</h1>
-                    <p class="text-xs text-emerald-100 font-light mt-0.5">ระบบตรวจสอบคลังสารเคมีเรียลไทม์ | สาขาวิชาเภสัชเวทและเภสัชพฤกษศาสตร์ ห้อง 610-03</p>
+                    <p class="text-xs text-emerald-100 font-light mt-0.5">ระบบตรวจสอบคลังสารเคมีเรียลไทม์ | สาขาวิชาเภสัชเวทและเภสัชพฤกษศาสตร์ ห้องปฏิบัติการ 3402</p>
                 </div>
             </div>
             <div class="bg-emerald-900/50 px-4 py-1.5 rounded-full border border-emerald-500/30 text-xs font-medium flex items-center gap-2 shrink-0">
@@ -101,7 +101,7 @@ Faculty of Pharmaceutical Sciences, Prince of Songkla University (PSU)
 
     <script>
         // ⚠️ สำคัญมาก: อยาลืมก๊อปปี้ลิงก์ Web App (URL สีส้มยาวๆ จาก Google Sheets) มาวางแทนข้อความนี้แทนนะครับเว็บถึงจะดึงข้อมูลชีทได้
-        const API_URL = "https://script.google.com/macros/s/AKfycbwnByTBX1fhBz10GR88C0qir-4uyKKVrzd_YnKMKWk53Lgl_4CVc9F-jtBv3-KF0H69KQ/exec"; 
+        const API_URL = "https://script.google.com/macros/s/AKfycby1me7jV00flAU8mC4IHFlJUGC1UKE0gv9QYJe6xGLLEwEBeHfOXQK-IsZPtl3-CpIJCw/exec"; 
 
         let masterStockData = [];
 
@@ -111,7 +111,7 @@ Faculty of Pharmaceutical Sciences, Prince of Songkla University (PSU)
                 const allData = await response.json();
                 
                 // กรองดึงเฉพาะข้อมูลห้องปฏิบัติการ 610-03 เท่านั้น
-                masterStockData = allData.filter(row => row["ห้อง"] && row["ห้อง"].toString().includes("610-03"));
+                masterStockData = allData.filter(row => row["ห้อง"] && row["ห้อง"].toString().includes("3402"));
                 
                 updateDashboardCards(masterStockData);
                 renderStockTable(masterStockData);
